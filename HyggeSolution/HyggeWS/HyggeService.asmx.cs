@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HyggeLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,9 @@ namespace HyggeWS
         {
             return "Hello World";
         }
-     
+
+        }
+
+
     }
-}
+
