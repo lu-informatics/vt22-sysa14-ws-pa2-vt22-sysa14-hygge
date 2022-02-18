@@ -23,7 +23,7 @@ namespace HyggeWS
         {
             return "Hello World";
         }
-
+<<<<<<< HEAD
         [WebMethod]
         public string ShowFileOne()
         {
@@ -35,10 +35,10 @@ namespace HyggeWS
             return "This is file one!";
         }
 
-
+=======
 
         }
-
+>>>>>>> dev-karin
 
 
     }

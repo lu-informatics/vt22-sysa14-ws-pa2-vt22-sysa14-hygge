@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Assignment2Client2
 {
@@ -16,5 +17,25 @@ namespace Assignment2Client2
         {
             InitializeComponent();
         }
+
+        private void btnFileOne_Click(object sender, EventArgs e)
+        {
+
+            string path = txtBoxPath + "//" + btnFileOne.Text;
+            if (File.Exists(path))
+            {
+                System.Diagnostics.Process.Start(path);
+            }
+            else
+            {
+                MessageBox.Show("The file was not found!");
+
+
+
+
+            }
+        }
     }
 }
+
+
