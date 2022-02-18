@@ -22,6 +22,18 @@ namespace HyggeWS
         {
             return "Hello World";
         }
-     
+        [WebMethod]
+        public string ShowFileOne()
+        {
+            return "This is file one!";
+        }
+        [WebMethod]
+        public string ShowFileTwo()
+        {
+            return "This is file one!";
+        }
+
+
+
     }
 }
