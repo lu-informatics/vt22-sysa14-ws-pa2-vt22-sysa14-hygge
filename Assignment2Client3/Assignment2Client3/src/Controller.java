@@ -11,6 +11,7 @@ public class Controller {
 	public Controller(PoemFrame poemFrame) {
 		this.poemFrame = poemFrame; // Assign the poemFrame input as our this.poemFrame instance variable
 		this.proxy = new HyggeServiceSoapProxy(); // Create instance of the SoapProxy.
+		this.defineListeners(); // Define the actionListeners so the GUI responds to user input
 	}
 	
 	// A method that defines the actions of the components in the GUI.
