@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FetchPoem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchPoemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchPoemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FetchPoemSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchPoem" />
+  </wsdl:message>
+  <wsdl:message name="FetchPoemSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchPoemResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HyggeServiceSoap">
+    <wsdl:operation name="FetchPoem">
+      <wsdl:input message="tns:FetchPoemSoapIn" />
+      <wsdl:output message="tns:FetchPoemSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HyggeServiceSoap" type="tns:HyggeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchPoem">
+      <soap:operation soapAction="http://tempuri.org/FetchPoem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HyggeServiceSoap12" type="tns:HyggeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchPoem">
+      <soap12:operation soapAction="http://tempuri.org/FetchPoem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HyggeService">
+    <wsdl:port name="HyggeServiceSoap" binding="tns:HyggeServiceSoap">
+      <soap:address location="http://localhost/HyggeWS/HyggeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HyggeServiceSoap12" binding="tns:HyggeServiceSoap12">
+      <soap12:address location="http://localhost/HyggeWS/HyggeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
