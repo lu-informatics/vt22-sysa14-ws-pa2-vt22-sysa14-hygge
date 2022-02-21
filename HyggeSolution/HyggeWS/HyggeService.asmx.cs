@@ -27,7 +27,7 @@ namespace HyggeWS
             }
 
             string path = @"C:\poems\" + fileName;  //Creating a path string to be used later to find the correct file
-
+            
             try
             {
                 string text = File.ReadAllText(path);   //Put content of a file in string using the path created above
