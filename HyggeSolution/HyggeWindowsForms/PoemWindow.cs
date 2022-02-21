@@ -13,18 +13,18 @@ namespace HyggeWindowsForms
 {
     public partial class PoemWindow : Form
     {
-        private HyggeServiceSoapClient proxy;
+        private HyggeServiceSoapClient proxy; // Added SoapClient as instance variable so that components can access it
         public PoemWindow()
         {
             InitializeComponent();
-            proxy = new HyggeServiceSoapClient();
+            proxy = new HyggeServiceSoapClient(); // Initialize the SoapClient
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            String fileName = cmbPoems.SelectedItem.ToString();
-            String fileContent = proxy.FetchPoem(fileName);
-            txtBox.Text = fileContent;
+            String fileName = cmbPoems.SelectedItem.ToString(); // Get selected poem from combobox cmbPoems
+            String fileContent = proxy.FetchPoem(fileName); // Use proxy (SoapClient) and the file name to get file content
+            txtBox.Text = fileContent; // Return the file content
         }
     }
 }
