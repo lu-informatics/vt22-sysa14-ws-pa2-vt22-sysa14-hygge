@@ -22,9 +22,16 @@ namespace HyggeWindowsForms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            String fileName = cmbPoems.SelectedItem.ToString(); // Get selected poem from combobox cmbPoems
-            String fileContent = proxy.FetchPoem(fileName); // Use proxy (SoapClient) and the file name to get file content
-            txtBox.Text = fileContent; // Return the file content
+            try // Try/catch to catch any errors when fetching the file name
+            {
+                String fileName = cmbPoems.SelectedItem.ToString(); // Get selected poem from combobox cmbPoems
+                String fileContent = proxy.FetchPoem(fileName); // Use proxy (SoapClient) and the file name to get file content
+                txtBox.Text = fileContent; // Return the file content
+            } 
+            catch (NullReferenceException ex) // Catch NullReferenceException which will be thrown if cmbPoems.SelectedItem is null.
+            {
+                MessageBox.Show(ex.Message + " Please choose a poem from the drop down menu."); // Add message to make it clear to the user 
+            }                                                                                   // that they should choose poems from the drop down
         }
     }
 }

@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment2Client1", "Assignment2Client1\Assignment2Client1.csproj", "{48B8FADE-1BEB-4820-82EF-60FE00A4674B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyggeWindowsForms", "HyggeWindowsForms\HyggeWindowsForms.csproj", "{B66CDAD4-C67D-4421-8498-1FB7BDC8AAF5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F74860D2-7F67-44A5-B41E-A94E941C3F30} = {F74860D2-7F67-44A5-B41E-A94E941C3F30}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
