@@ -41,7 +41,7 @@
             "sea.txt",
             "sky.txt",
             "forest.txt"});
-            this.cmbPoems.Location = new System.Drawing.Point(129, 114);
+            this.cmbPoems.Location = new System.Drawing.Point(46, 74);
             this.cmbPoems.Name = "cmbPoems";
             this.cmbPoems.Size = new System.Drawing.Size(159, 21);
             this.cmbPoems.TabIndex = 0;
@@ -49,15 +49,17 @@
             // lblChooseAPoem
             // 
             this.lblChooseAPoem.AutoSize = true;
-            this.lblChooseAPoem.Location = new System.Drawing.Point(126, 98);
+            this.lblChooseAPoem.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseAPoem.Location = new System.Drawing.Point(43, 58);
             this.lblChooseAPoem.Name = "lblChooseAPoem";
-            this.lblChooseAPoem.Size = new System.Drawing.Size(90, 13);
+            this.lblChooseAPoem.Size = new System.Drawing.Size(119, 15);
             this.lblChooseAPoem.TabIndex = 1;
             this.lblChooseAPoem.Text = "Choose a poem...";
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(129, 155);
+            this.btnSearch.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(46, 114);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 2;
@@ -67,7 +69,8 @@
             // 
             // txtBox
             // 
-            this.txtBox.Location = new System.Drawing.Point(394, 114);
+            this.txtBox.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox.Location = new System.Drawing.Point(247, 74);
             this.txtBox.Multiline = true;
             this.txtBox.Name = "txtBox";
             this.txtBox.ReadOnly = true;
@@ -78,7 +81,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(530, 278);
             this.Controls.Add(this.txtBox);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblChooseAPoem);
