@@ -32,9 +32,17 @@ namespace HyggeWS
                 string text = File.ReadAllText(path);   //Put content of a file in string using the path created above
                 return text;        //Return the file content
             }
-            catch (FileNotFoundException ex)    //Catching FileNotFoundException in case File.ReadAllText throws it
+            catch (FileNotFoundException)    //Catching FileNotFoundException in case File.ReadAllText throws it
             {
                 return "Error: No file with file name " + fileName; //If the file was not found, return error message
+            }
+            catch (DirectoryNotFoundException)
+            {
+                return "Error: No file name sent, please enter a file name";
+            }
+            catch (ArgumentException)
+            {
+                return "Error: Illegal caracters in the file name " + fileName;
             }
         }
     }

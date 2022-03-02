@@ -48,6 +48,7 @@ public class PoemFrame extends JFrame {
 		contentPane.add(lblChoosePoem);
 		
 		txtDisplay = new JTextArea();
+		txtDisplay.setEditable(false);
 		txtDisplay.setBounds(220, 40, 195, 204);
 		contentPane.add(txtDisplay);
 		
